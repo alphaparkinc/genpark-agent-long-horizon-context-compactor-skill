@@ -1,0 +1,48 @@
+{
+  "name": "genpark-agent-long-horizon-context-compactor-skill",
+  "version": "1.0.0",
+  "description": "GenPark AI Agent Skill - Long-horizon conversational memory compaction engine evicting low-entropy dialog turns and synthesizing episodic anchors.",
+  "homepage": "https://genpark.ai/mcp",
+  "author": "genpark",
+  "category": "agent-memory",
+  "tags": [
+    "mem0",
+    "langmem",
+    "context-compaction",
+    "episodic-memory",
+    "token-optimization"
+  ],
+  "inputs": {
+    "session_turn_count": {
+      "type": "integer",
+      "default": 24
+    },
+    "raw_token_count": {
+      "type": "integer",
+      "default": 12800
+    },
+    "target_budget_tokens": {
+      "type": "integer",
+      "default": 2048
+    }
+  },
+  "outputs": {
+    "compaction_id": {
+      "type": "string"
+    },
+    "compression_ratio": {
+      "type": "number"
+    },
+    "extracted_episodic_facts_count": {
+      "type": "integer"
+    },
+    "episodic_anchor_keys": {
+      "type": "array"
+    },
+    "memory_frame_url": {
+      "type": "string"
+    }
+  },
+  "entrypoint": "client.py",
+  "example": "example_usage.py"
+}
